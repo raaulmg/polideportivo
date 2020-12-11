@@ -304,13 +304,14 @@
                 $mesReservar = $_REQUEST["mesReservar"];
                 if(strlen($mesReservar) < 2){$mesReservar = "0$mesReservar";}
             }
-            if(isset($_REQUEST["anoReservar"])){$anoReservar = $_REQUEST["anoReservar"];
+            if(isset($_REQUEST["anoReservar"])){
+                $anoReservar = $_REQUEST["anoReservar"];
                 $data["fechaReservar"] = $anoReservar."-".$mesReservar."-".$diaReservar;
             }
 
             if($this->seguridad->comprobarRolAdmin()){
-                $data["listaReservas"] = $this->reserva->getAllFecha($data["fechaReservar"]);
-
+            $fecha = $data["fechaReservar"];
+            $data["listaReservas"] = $this->reserva->getAllFecha($fecha);
             $data["listaInstalaciones"] = $this->instalacion->getAll();
             $this->vista->mostrar("reservas/editarReservas", $data);
             } 
