@@ -120,7 +120,7 @@
         }
 
         public function getHorarioInstalacion($idInsta){
-            $result = $this->db->consulta("SELECT * FROM horarioInstalacion WHERE id = '$idInsta'");
+            $result = $this->db->consulta("SELECT * FROM horarioinstalacion WHERE id = '$idInsta'");
             if($result){
                 return $result;
             }
