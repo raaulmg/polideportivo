@@ -263,7 +263,7 @@
         public function mostrarListadoReservas(){
             if($this->seguridad->comprobarRolAdmin()){
                 $data["listaReservas"] = $this->reserva->getAll();
-                $this->vista->mostrar("home/homeAdmin", $data);
+                $this->vista->mostrar("reservas/listadoReservas", $data);
                 }
                 else{$this->mostrarHome();}
 
